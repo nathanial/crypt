@@ -1,0 +1,14 @@
+# Lake build artifacts
+.lake/
+lake-manifest.json
+
+# Editor files
+*.swp
+*~
+.DS_Store
+
+# Build outputs
+*.olean
+*.ilean
+*.trace
+*.hash
