@@ -5,7 +5,7 @@ package crypt where
   version := v!"0.1.0"
   moreLinkArgs := #["-L/opt/homebrew/lib", "-lsodium"]
 
-require crucible from git "https://github.com/nathanial/crucible" @ "v0.0.1"
+require crucible from git "https://github.com/nathanial/crucible" @ "v0.0.3"
 
 @[default_target]
 lean_lib Crypt where
