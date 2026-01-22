@@ -24,7 +24,7 @@ test "isInitialized returns true after init" := do
   let initialized ← Crypt.isInitialized
   shouldSatisfy initialized "isInitialized should be true"
 
-#generate_tests
+
 
 -- ============================================================================
 -- Random Tests
@@ -51,7 +51,7 @@ test "uint32Uniform stays in range" := do
     let val ← Crypt.Random.uint32Uniform 100
     shouldSatisfy (val < 100) "Value should be < 100"
 
-#generate_tests
+
 
 end RandomTests
 
@@ -105,7 +105,7 @@ test "streaming hash matches single-shot" := do
     | .error e => throw (IO.userError s!"Init failed: {e}")
   | .error e => throw (IO.userError s!"Hash failed: {e}")
 
-#generate_tests
+
 
 end HashTests
 
@@ -141,7 +141,7 @@ test "hash with explicit salt" := do
   | .ok hash => hash.size ≡ 32
   | .error e => throw (IO.userError s!"Hash failed: {e}")
 
-#generate_tests
+
 
 end PasswordTests
 
@@ -191,7 +191,7 @@ test "key roundtrip" := do
     shouldSatisfy valid "Restored key should work"
   | .error e => throw (IO.userError s!"Key restore failed: {e}")
 
-#generate_tests
+
 
 end AuthTests
 
@@ -266,7 +266,7 @@ test "ciphertext is larger than plaintext" := do
     ciphertext.size ≡ plaintext.size + 16
   | .error e => throw (IO.userError s!"Encrypt failed: {e}")
 
-#generate_tests
+
 
 end SecretBoxTests
 
